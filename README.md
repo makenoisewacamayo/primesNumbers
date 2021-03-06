@@ -2,7 +2,7 @@
 
 implementation of the algorith siege of Eratosthenes, to calculate primes numbers.
 
-is exposed as an api by default in por 3000. If you want to change it create an `.env` file on the
+is exposed as an api by default in port 3000. If you want to change it create an `.env` file on the
 root of the project.
 
 ```
@@ -13,11 +13,11 @@ NODE_ENV=development
 SERVER_PORT=8080
 ```
 
-to start the project first do npm install.
+to start the project, first do `npm install`.
 
-then run the following `npm run dev`
+then run the following `npm run dev` to start nodemon
 
-on the browser expose the `http://localhost:8080/prime_number/15`
+on the browser expose the `http://localhost:8080/prime_number/15`, the port could change.
 
 It easy generate primes number of 1.000.000 and above.
 
