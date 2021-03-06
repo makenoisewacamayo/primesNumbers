@@ -1,5 +1,28 @@
 # prime-numbers
 
+implementation of the algorith siege of Eratosthenes, to calculate primes numbers.
+
+is exposed as an api by default in por 3000. If you want to change it create an `.env` file on the
+root of the project.
+
+```
+# Set to production when deploying to production
+NODE_ENV=development
+
+# Node.js server configuration
+SERVER_PORT=8080
+```
+
+to start the project first do npm install.
+
+then run the following `npm run dev`
+
+on the browser expose the `http://localhost:8080/prime_number/15`
+
+It easy generate primes number of 1.000.000 and above.
+
+The project was made with typescript and used mocha and chai for testting.
+
 ## Development
 
 The project use [husky](https://github.com/typicode/husky) and
@@ -8,17 +31,13 @@ source code before commit
 
 Git hooks scripts are installed after running `npm install` the first time
 
-### npm run build:commonjs
+### npm run dev
 
-Compile typescript files from the `src` folder inside the `lib` folder
-
-### npm run build:esm
-
-Compile typescript files from the `src` folder inside the `esm` folder using es modules
+run nodemon to watch all changes, by default get an instance of express on port 3000.
 
 ### npm run build
 
-Concurrently run both `build:commonjs` and `build:esm`
+Compile typescript files from the `src` folder inside the `lib` folder
 
 ### npm run clean
 
@@ -48,31 +67,3 @@ Check eslint errors according to `.eslintrc`
 ### npm run lint:fix
 
 Run `npm run lint` applying fixes and run prettier on every typescript file
-
-### npm run health
-
-Check for:
-
-- Build errors
-- Tests failures
-- Lint errors
-
-### npm run ci
-
-Run test and generate every possible report. Do not exit with error code > 0 if the tests fail. It
-generates a report file instead
-
-- **reports/lint-checkstyle.xml** Lint report in chackstyle format
-- **reports/test-results.xml** Test report in xUnit format
-- **reports/coverage/clover.xml** Coverage report in clover format
-- **reports/coverage/cobertura-coverage.xml** Coverage report in cobertura format
-- **reports/coverage/lcov.info** Coverage report in lcov
-- **reports/coverage/index.html** Coverage report in html
-
-### npm run release
-
-- Bump `package.json` version accordingly to the commit messages
-- Generate changelog for the new version from the commit messages
-- Commit `package.json` and `CHANGELOG.md` with the new changes
-- Create a git tag with the new version
-- You'll need to execute `git push --follow-tags origin master` after generating a release
